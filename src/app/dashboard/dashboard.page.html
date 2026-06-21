@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>VacinaKids</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="welcome">
+    <h1>Olá, Responsável 👋</h1>
+    <p>Acompanhe a vacinação dos seus filhos.</p>
+  </div>
+
+  <div class="stats-grid">
+
+    <ion-card class="children-card" routerLink="/children">
+      <ion-card-content>
+        <div class="emoji">👶</div>
+        <h2>{{ totalChildren }}</h2>
+        <p>Crianças</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="pending-card" routerLink="/children/2">
+      <ion-card-content>
+        <div class="emoji">🟡</div>
+        <h2>{{ pendingVaccines }}</h2>
+        <p>Pendentes</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="overdue-card" routerLink="/children/2">
+      <ion-card-content>
+        <div class="emoji">🔴</div>
+        <h2>{{ overdueVaccines }}</h2>
+        <p>Atrasadas</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="campaign-card" routerLink="/campaigns">
+      <ion-card-content>
+        <div class="emoji">📢</div>
+        <h2>{{ activeCampaigns }}</h2>
+        <p>Campanhas</p>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <h2 class="section-title">Resumo das Crianças</h2>
+
+  <ion-card class="child-card" routerLink="/children/1">
+    <ion-card-content>
+      <strong>Lucas • 3 anos</strong>
+      <p>✅ Vacinação em dia</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="attention-card" routerLink="/children/2">
+    <ion-card-content>
+      <strong>Sofia • 8 meses</strong>
+      <p>⚠️ 1 vacina pendente</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Crianças</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>Minhas Crianças</h1>
+
+  @for (child of children; track child.id) {
+
+    <ion-card [routerLink]="['/children', child.id]">
+
+      <ion-card-content>
+
+        <h2>{{ child.name }}</h2>
+
+        <p>{{ child.age }}</p>
+
+        @if (child.status === 'Em dia') {
+          <p>🟢 Vacinação em dia</p>
+        }
+
+        @if (child.status === 'Pendente') {
+          <p>🟡 1 vacina pendente</p>
+        }
+
+      </ion-card-content>
+
+    </ion-card>
+
+  }
+
+</ion-content>

@@ -1,0 +1,66 @@
+.welcome h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.section-title {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #473C33;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.stats-grid ion-card {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.stats-grid ion-card:hover {
+  transform: translateY(-4px);
+}
+
+.stats-grid h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.emoji {
+  font-size: 40px;
+}
+
+ion-card {
+  border-radius: 16px;
+}
+
+.children-card {
+  border-left: 6px solid #ABC270;
+}
+
+.pending-card {
+  border-left: 6px solid #FEC868;
+}
+
+.overdue-card {
+  border-left: 6px solid #FDA769;
+}
+
+.campaign-card {
+  border-left: 6px solid #473C33;
+}
+
+.child-card {
+  border-left: 5px solid #ABC270;
+}
+
+.attention-card {
+  border-left: 5px solid #FDA769;
+}

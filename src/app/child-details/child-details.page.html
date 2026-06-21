@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Detalhes da Criança</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>{{ child.name }}</h1>
+  <p>{{ child.age }}</p>
+
+  <ion-card>
+    <ion-card-content>
+
+      <strong>Situação Vacinal</strong>
+
+      @if (child.status === 'upToDate') {
+        <p style="color: #ABC270;">
+          ✅ Vacinação em dia
+        </p>
+      }
+
+      @if (child.status === 'attention') {
+        <p style="color: #FDA769;">
+          ⚠ Necessita atenção
+        </p>
+      }
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+
+      <h2>Progresso Vacinal</h2>
+
+      <ion-progress-bar
+        [value]="child.progress">
+      </ion-progress-bar>
+
+      <p>{{ child.progress * 100 }}%</p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <h2>Histórico Vacinal</h2>
+
+  @for (vaccine of child.vaccines; track vaccine.name) {
+
+    <ion-card>
+
+      <ion-card-content>
+
+        <strong>{{ vaccine.name }}</strong>
+
+        @if (vaccine.status === 'applied') {
+          <p>✅ Aplicada</p>
+        }
+
+        @if (vaccine.status === 'overdue') {
+          <p style="color: #FDA769;">
+            🔴 Atrasada
+          </p>
+        }
+
+      </ion-card-content>
+
+    </ion-card>
+
+  }
+
+</ion-content>

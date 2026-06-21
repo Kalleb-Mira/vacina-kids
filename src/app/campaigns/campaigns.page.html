@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Campanhas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>Campanhas Ativas</h1>
+
+  @for (campaign of campaigns; track campaign.title) {
+
+    <ion-card>
+
+      <ion-card-content>
+
+        <h2>📢 {{ campaign.title }}</h2>
+
+        <p>
+          <strong>Público:</strong>
+          {{ campaign.audience }}
+        </p>
+
+        <p>
+          <strong>Período:</strong>
+          {{ campaign.period }}
+        </p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  }
+
+</ion-content>
